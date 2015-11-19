@@ -133,12 +133,12 @@ void draw(){
      float shoulder = heroY-30; strokeWeight(5);                 
      stroke(250,210,175);       // arm color
      if (count /30%2==0) {
-     line(heroX, shoulder+25, heroX-25, heroY-10);     //  Left shoulder 
-     line(heroX+40, shoulder+25, heroX+60, heroY+10);  //  Rigth shoulder
+       line(heroX, shoulder+25, heroX-25, heroY-10);     //  Left shoulder 
+       line(heroX+40, shoulder+25, heroX+60, heroY+10);  //  Rigth shoulder
    
      }else {
-     line(heroX, shoulder+25, heroX-25, heroY+20);     //  Left shoulder 
-     line(heroX+40, shoulder+25, heroX+60, heroY-20);  //  Rigth shoulder
+       line(heroX, shoulder+25, heroX-25, heroY+20);     //  Left shoulder 
+       line(heroX+40, shoulder+25, heroX+60, heroY-20);  //  Rigth shoulder
      }
      
      stroke(0);
@@ -174,7 +174,11 @@ void draw(){
    fill(219,68,27);
    stroke(0);
   // arc(monsterX+40, monsterY+40, 80, 80, 0, PI+QUARTER_PI, PIE);               // body
-   arc(monsterX+40, monsterY+40, 80, 80, 0, PI+QUARTER_PI,PIE);               // body
+  if((count /45%2==0)  ) 
+     arc(monsterX+40, monsterY+40, 80, 80, 0, PI+QUARTER_PI, PIE);               // body
+  else
+     arc(monsterX+40, monsterY+40, 80, 80, -PI*0.125, 1.75*PI, PIE);               // body
+
    fill(255);
    ellipse(monsterX+20, monsterY+35, 12, 12);                                 // sclera
    fill(0);
